@@ -1,23 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { Component, Input } from '@angular/core';
+import { PostModel } from '../postNews.model';
 
 @Component({
   selector: 'app-post-news',
   templateUrl: './post-news.component.html',
   styleUrls: ['./post-news.component.css']
 })
-export class PostNewsComponent implements OnInit {
-
-  news = [{}];
-
-  constructor(private http: HttpClient) { }
-
-
-  ngOnInit(): void {
-    this.http.get('http://jsonplaceholder.typicode.com/posts').subscribe(postNews => {
-      console.log('postNews');
-      console.log(postNews);
-    })
-  }
+export class PostNewsComponent {
+  @Input('post') post: PostModel;
 }
-

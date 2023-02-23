@@ -1,3 +1,3 @@
-<div class="row" *ngFor="let post of news">
-    <p>{{post['titlle']}}</p>
-</div>
+<h1>API posts</h1>
+<app-post-news *ngFor="let element of news" [post]="element"></app-post-news>
+

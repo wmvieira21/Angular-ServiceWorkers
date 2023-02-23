@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'Angular-ServiceWorkers';
 
   news: PostModel[];
+  newsInput: string = "";
 
   constructor(private http: HttpClient) { }
 

@@ -1,3 +1,12 @@
 <h1>API posts</h1>
-<app-post-news *ngFor="let element of news" [post]="element"></app-post-news>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <label for="news">Search</label>
+            <input type="text" class="form-control" [(ngModel)]='newsInput'>
+        </div>
+    </div>
+</div>
+<hr>
+<app-post-news *ngFor="let element of news | filterNewsPipe:newsInput" 
+[post]="element"></app-post-news>
